@@ -2,6 +2,7 @@ import { execFileSync, spawn } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { mkdir } from 'node:fs/promises'
 import path from 'node:path'
+import { pathToFileURL } from 'node:url'
 import { fileStore, type WorkspaceScope } from '../../../files/fileStore.js'
 import { resolveBackendRoot } from '../../../support/runtimePaths.js'
 import type { ScriptTemplate } from '../../../skills/scriptManifestTypes.js'
@@ -74,7 +75,7 @@ function resolveTsxLoaderPath(): string {
   if (!existsSync(loaderPath)) {
     throw new Error(`TSX loader not found: ${loaderPath}`)
   }
-  return loaderPath
+  return pathToFileURL(loaderPath).href
 }
 
 function runNodeProcess(
