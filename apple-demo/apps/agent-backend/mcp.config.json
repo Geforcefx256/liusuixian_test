@@ -1,0 +1,13 @@
+{
+  "timeoutMs": 15000,
+  "defaultServer": "default",
+  "servers": [
+    {
+      "id": "default",
+      "enabled": true,
+      "transport": "http",
+      "endpoint": "http://localhost:3200/mcp",
+      "tools": []
+    }
+  ]
+}

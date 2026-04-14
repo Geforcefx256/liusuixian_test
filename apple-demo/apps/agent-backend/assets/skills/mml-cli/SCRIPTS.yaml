@@ -1,0 +1,108 @@
+templates:
+  - id: schema-list
+    description: List available network types and versions from the MML rule database
+    entry: scripts/schema-list.ts
+    timeoutSeconds: 10
+    inputSchema:
+      type: object
+      additionalProperties: false
+      properties: {}
+    argv:
+      - kind: payload
+        encoding: json
+
+  - id: schema-show
+    description: Show schema commands and parameters for a network type and version
+    entry: scripts/schema-show.ts
+    timeoutSeconds: 15
+    inputSchema:
+      type: object
+      additionalProperties: false
+      properties:
+        type:
+          type: string
+          description: Network type (e.g. NR, LTE, AMF)
+        version:
+          type: string
+          description: Network version (e.g. 20.9.2)
+        command:
+          type: string
+          description: Optional command name to filter
+      required:
+        - type
+        - version
+    argv:
+      - kind: payload
+        encoding: json
+
+  - id: validate
+    description: Validate an MML command against the schema for a given network type and version
+    entry: scripts/validate.ts
+    timeoutSeconds: 15
+    inputSchema:
+      type: object
+      additionalProperties: false
+      properties:
+        type:
+          type: string
+          description: Network type (e.g. NR, LTE, AMF)
+        version:
+          type: string
+          description: Network version (e.g. 20.9.2)
+        command:
+          type: string
+          description: The MML command text to validate
+      required:
+        - type
+        - version
+        - command
+    argv:
+      - kind: payload
+        encoding: json
+
+  - id: file-query
+    description: Query statements from an MML file by command names with optional filtering
+    entry: scripts/file-query.ts
+    timeoutSeconds: 15
+    inputSchema:
+      type: object
+      additionalProperties: false
+      properties:
+        file:
+          type: string
+          pathBase: workspaceRoot
+          description: Path to the MML script file (.txt) relative to workspace root
+        commandNames:
+          type: array
+          items:
+            type: string
+          description: Command names to query. If not provided, returns all commands in the file.
+        where:
+          type: array
+          items:
+            type: object
+            properties:
+              paramName:
+                type: string
+              expectedValue:
+                type: string
+            required:
+              - paramName
+              - expectedValue
+            additionalProperties: false
+          description: Optional filter conditions as paramName/expectedValue pairs
+        select:
+          type: string
+          description: Optional parameter name to select
+        textOnly:
+          type: boolean
+          description: Return only the command text without row details
+        limit:
+          type: integer
+          minimum: 1
+          description: Maximum number of results per command
+      required:
+        - file
+    argv:
+      - kind: payload
+        encoding: json

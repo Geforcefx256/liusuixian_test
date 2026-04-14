@@ -1,0 +1,47 @@
+{
+  "server": {
+    "port": 3200,
+    "host": "localhost",
+    "https": {
+      "enabled": false,
+      "key": "./certs/key.pem",
+      "cert": "./certs/cert.pem"
+    }
+  },
+  "database": {
+    "sqlite": {
+      "dataDir": "./SQLite/data"
+    }
+  },
+  "mmlRules": {
+    "sourceDir": "./data/mml-rules",
+    "dbPath": "./data/mml-rules.db",
+    "importOnStartup": true,
+    "failOnStartupImportError": false
+  },
+  "auth": {
+    "mode": "local",
+    "oauth": {
+      "providerCode": "default",
+      "authorizeUrl": "",
+      "tokenUrl": "",
+      "refreshUrl": "",
+      "userinfoUrl": "",
+      "logoutUrl": "",
+      "logoutRedirectUrl": "",
+      "clientId": "",
+      "clientSecret": "",
+      "redirectUri": "http://localhost:3200/web/api/auth/callback",
+      "scope": "openid profile email",
+      "tokenEncryptionKey": "",
+      "enableLogs": false
+    },
+    "refreshWindowMs": 300000,
+    "sameOriginProtection": {
+      "enabled": true,
+      "allowedOrigins": [
+        "http://localhost:*"
+      ]
+    }
+  }
+}

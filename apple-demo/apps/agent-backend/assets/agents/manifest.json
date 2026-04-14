@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "agents": [
+    {
+      "id": "workspace-agent",
+      "path": "/agents/workspace-agent",
+      "enabled": true
+    }
+  ]
+}

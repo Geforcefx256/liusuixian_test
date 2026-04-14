@@ -1,0 +1,4 @@
+网络类型,服务区类型,起始服务区,终止服务区,原UPF服务区,新UPF服务区
+2/3G,LAI,6040204E4,6040204E4,zonetan2_lai,zonetec1_lai
+4G,TAI,6040204E4,6040204E4,zonetan2_tai,
+5G,N2TAI,6040204E4,6040204E4,,zonetec1_tai

@@ -1,0 +1,43 @@
+{
+  "name": "@apple-demo/agent-backend",
+  "version": "1.0.0",
+  "description": "Memory service for MML Excel Planner",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "assemble": "node scripts/build-agent-dist.mjs",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "cleanup:legacy-workspace-naming": "tsx scripts/cleanupLegacyWorkspaceNaming.ts",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit -p tsconfig.json",
+    "download-ripgrep": "node scripts/download-ripgrep.mjs",
+    "download-vec": "node scripts/download-vec.js"
+  },
+  "dependencies": {
+    "@apple-demo/shared": "workspace:*",
+    "mml-cli": "workspace:*",
+    "chokidar": "^4.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "multer": "^2.1.1",
+    "tsx": "^4.19.0",
+    "uuid": "^10.0.0",
+    "yaml": "^2.8.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/multer": "1.4.7",
+    "@types/node": "^25.5.0",
+    "@types/uuid": "^10.0.0",
+    "esbuild": "^0.27.4",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

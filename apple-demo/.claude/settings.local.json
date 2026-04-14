@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "mcp__web-search-prime__web_search_prime",
+      "mcp__web-reader__webReader",
+      "Bash(openspec new:*)",
+      "Bash(openspec status:*)",
+      "Bash(openspec instructions:*)",
+      "Bash(node:*)",
+      "Bash(grep -E \"\\\\.\\(json|md\\)$\")",
+      "Bash(npx tsx:*)",
+      "Bash(./node_modules/.bin/tsx:*)",
+      "Bash(pnpm tsx:*)",
+      "Bash(node_modules/.bin/tsx test-fixtures/seed-serviceip.ts)",
+      "Bash(node_modules/.bin/tsx:*)",
+      "Bash(git clean:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm:*)",
+      "Bash(python3:*)",
+      "Bash(find:*)",
+      "Bash(xargs cat:*)",
+      "Bash(openspec list:*)",
+      "Bash(grep -r \"AgentStreamEvent\\\\|StreamEvent\" /Users/gaolifu/work/project/apple/apple-demo/apps --include=\"*.ts\" --include=\"*.tsx\" ! -path \"*/node_modules/*\")",
+      "Bash(npx openspec:*)",
+      "Bash(openspec --help)"
+    ]
+  }
+}

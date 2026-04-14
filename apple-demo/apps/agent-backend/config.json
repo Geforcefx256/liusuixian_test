@@ -1,0 +1,148 @@
+{
+  "server": {
+    "port": 3100,
+    "host": "localhost",
+    "requestBodyLimits": {
+      "defaultJson": "2mb",
+      "fileSaveJson": "50mb"
+    },
+    "https": {
+      "enabled": false,
+      "key": "./certs/key.pem",
+      "cert": "./certs/cert.pem"
+    }
+  },
+  "memory": {
+    "workspaceDir": "./workspace",
+    "dbPath": "./data/memory.db"
+  },
+  "auth": {
+    "baseUrl": "http://localhost:3200",
+    "sameOriginProtection": {
+      "enabled": true,
+      "allowedOrigins": ["http://localhost:*"]
+    }
+  },
+  "runtime": {
+    "workspaceDir": "../..",
+    "agentLoop": {
+      "maxSteps": 20,
+      "modelRecovery": {
+        "maxCorrectionCalls": 1
+      },
+      "loopDetection": {
+        "enabled": true,
+        "sameFailureThreshold": 2,
+        "sameOutcomeThreshold": 3
+      }
+    },
+    "filesystemTools": {
+      "compatibilityMode": true
+    },
+    "workspaceAgent": {
+      "plannerEnabled": false,
+      "defaultPrimaryAgent": "build"
+    },
+    "context": {
+      "auto": true,
+      "prune": true,
+      "logDetail": true
+    },
+    "managedSkills": {
+      "registryPath": "./data/managed-skills.json",
+      "packagesDir": "./data/skills"
+    },
+    "tools": {
+      "displayNames": {
+        "local:read_file": "读取工作区文件",
+        "local:list_directory": "查看工作区目录",
+        "local:find_files": "查找工作区文件",
+        "local:grep": "搜索文件内容",
+        "local:write": "写入工作区文件",
+        "local:edit": "编辑工作区文件",
+        "local:question": "等待你回答",
+        "skill:skill": "加载技能说明",
+        "skill:read_asset": "读取技能文件",
+        "skill:list_assets": "查看技能目录",
+        "skill:find_assets": "查找技能文件",
+        "skill:exec": "执行技能脚本"
+      },
+      "runtimeRetry": {
+        "maxAttempts": 0
+      },
+      "deny": []
+    },
+    "providerLogging": "off",
+    "fileLogging": {
+      "enabled": true,
+      "directory": "./data/logs",
+      "format": "jsonl",
+      "split": "daily",
+      "redactSensitive": true
+    }
+  },
+  "embedding": {
+    "provider": "zhipu",
+    "model": "embedding-3",
+    "apiKey": "YOUR_ZHIPU_API_KEY",
+    "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+    "dimensions": 2048,
+    "timeoutMs": 30000
+  },
+  "agent": {
+    "defaultModel": {
+      "provider": "openai",
+      "modelName": "deepseek-chat",
+      "apiKey": "sk-7edd29f09c554479ab5a1235e04ce9c9",
+      "apiEndpoint": "https://api.deepseek.com",
+      "maxTokens": 8192,
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 40,
+      "stream": true,
+      "streamFirstByteTimeoutMs": 300000,
+      "streamIdleTimeoutMs": 300000,
+      "contextWindow": 131072,
+      "thinking": {
+        "enabled": true
+      }
+    },
+    "modelRegistry": {
+      "huaweiHisApi": {
+        "provider": "huaweiHisApi",
+        "modelName": "deepseek-chat",
+        "apiEndpoint": "https://api.deepseek.com",
+        "contextWindow": 131072,
+        "maxTokens": 8192,
+        "temperature": 0.5,
+        "topP": 0.95,
+        "topK": 40,
+        "stream": true,
+        "streamFirstByteTimeoutMs": 300000,
+        "streamIdleTimeoutMs": 300000,
+        "thinking": {
+          "enabled": true
+        },
+        "custom": {
+          "headers": {
+            "X-Token": "xxxx",
+            "HWID": "xxxx"
+          },
+          "body": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            }
+          }
+        }
+      }
+    },
+    "modelsByAgent": {}
+  },
+  "search": {
+    "vectorWeight": 0.7,
+    "keywordWeight": 0.3,
+    "chunkSize": 400,
+    "chunkOverlap": 80,
+    "searchLimit": 6
+  }
+}

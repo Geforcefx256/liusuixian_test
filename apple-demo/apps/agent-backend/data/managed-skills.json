@@ -1,0 +1,198 @@
+{
+  "version": 5,
+  "skills": [
+    {
+      "skillId": "pc-config-guide",
+      "canonicalName": "pc-config-guide",
+      "canonicalDescription": "电脑配置指导与装机/升级规划。当用户需要根据用途与预算制定配置方案、核对硬件兼容性、挑选部件组合、制定装机清单或升级路径时使用此技能。",
+      "displayName": "电脑配置",
+      "displayDescription": "电脑配置指导与装机/升级规划。当用户需要根据用途与预算制定配置方案、核对硬件兼容性、挑选部件组合、制定装机清单或升级路径时使用此技能。",
+      "ownerAgentId": "shared-skill-library",
+      "sourceAgentId": "shared-skill-library",
+      "sourcePath": "/Users/gaolifu/work/project/apple/apple-demo/apps/agent-backend/assets/skills/pc-config-guide/SKILL.md",
+      "surface": "production",
+      "starterEnabled": false,
+      "starterPriority": 0,
+      "agentBindings": [
+        {
+          "agentId": "workspace-agent"
+        }
+      ],
+      "importedAt": 1775012487761,
+      "updatedAt": 1776185771264,
+      "intentGroup": "verification",
+      "starterSummary": "",
+      "lifecycle": "published"
+    },
+    {
+      "skillId": "mml-cli",
+      "canonicalName": "mml-cli",
+      "canonicalDescription": "查询存量网元MML脚本中的命令，查询命令参数含义、校验 MML命令是否正确。",
+      "displayName": "配置读取",
+      "displayDescription": "mml存量配置读取",
+      "starterSummary": "萨达",
+      "ownerAgentId": "shared-skill-library",
+      "sourceAgentId": "shared-skill-library",
+      "sourcePath": "/Users/gaolifu/work/project/apple/apple-demo/apps/agent-backend/assets/skills/mml-cli/SKILL.md",
+      "lifecycle": "published",
+      "intentGroup": "planning",
+      "starterEnabled": true,
+      "starterPriority": 0,
+      "agentBindings": [
+        {
+          "agentId": "workspace-agent"
+        },
+        {
+          "agentId": "skill-creator"
+        }
+      ],
+      "importedAt": 1775887430399,
+      "updatedAt": 1776185771264
+    },
+    {
+      "skillId": "ne-csv-processor",
+      "canonicalName": "ne-csv-processor",
+      "canonicalDescription": "当用户需要处理当前工作区中的上传 CSV，并按固定规则生成编码结果时使用此技能。",
+      "displayName": "CSV读取",
+      "displayDescription": "当用户需要处理当前工作区中的上传 CSV，并按固定规则生成编码结果时使用此技能。",
+      "ownerAgentId": "mml-converter",
+      "sourceAgentId": "workspace-agent",
+      "sourcePath": "/Users/gaolifu/work/project/apple/apple-demo/apps/agent-backend/assets/agents/mml-converter/skills/ne-csv-processor/SKILL.md",
+      "allowedTools": [
+        "skill:exec",
+        "local:question"
+      ],
+      "surface": "production",
+      "starterEnabled": false,
+      "starterPriority": 60,
+      "agentBindings": [
+        {
+          "agentId": "workspace-agent"
+        }
+      ],
+      "importedAt": 1775012487761,
+      "updatedAt": 1775122854163,
+      "intentGroup": "configuration-authoring",
+      "starterSummary": "",
+      "lifecycle": "published"
+    },
+    {
+      "skillId": "dpi-new-bwm-pcc",
+      "canonicalName": "dpi-new-bwm-pcc",
+      "canonicalDescription": "当用户提供 DPI 业务场景描述，并希望生成 SMF 和 UPF 网元的 DPI 配置 LLD 模板或后续 MML 输入草案时使用此技能。聚焦基于业务感知的带宽控制场景，严格依据已给定命令、参数来源、依赖关系和示例生成结果，不得臆想未定义命令或参数。",
+      "displayName": "DPI配置",
+      "displayDescription": "当用户提供 DPI 业务场景描述，并希望生成 SMF 和 UPF 网元的 DPI 配置 LLD 模板或后续 MML 输入草案时使用此技能。聚焦基于业务感知的带宽控制场景，严格依据已给定命令、参数来源、依赖关系和示例生成结果，不得臆想未定义命令或参数。",
+      "ownerAgentId": "shared-skill-library",
+      "sourceAgentId": "shared-skill-library",
+      "sourcePath": "/Users/gaolifu/work/project/apple/apple-demo/apps/agent-backend/assets/skills/dpi-new-bwm-pcc/SKILL.md",
+      "allowedTools": [
+        "local:question"
+      ],
+      "surface": "production",
+      "intentGroup": "planning",
+      "starterEnabled": true,
+      "starterPriority": 100,
+      "agentBindings": [
+        {
+          "agentId": "workspace-agent"
+        }
+      ],
+      "importedAt": 1775012487761,
+      "updatedAt": 1776185771264,
+      "starterSummary": "生成DPI的业务配置方案",
+      "lifecycle": "published"
+    },
+    {
+      "allowedTools": [
+        "skill:exec"
+      ],
+      "skillId": "mml-generation",
+      "canonicalName": "mml-generation",
+      "canonicalDescription": "查询 MML 规则目录、验证 MML 命令、或从业务 .mml 文件中检索实际命令实例时使用。通过受治理的 skill:exec 模板调用，不要自行拼接 shell 命令。",
+      "displayName": "mml生成",
+      "displayDescription": "查询 MML 规则目录、验证 MML 命令、或从业务 .mml 文件中检索实际命令实例时使用。通过受治理的 skill:exec 模板调用，不要自行拼接 shell 命令。",
+      "starterSummary": "",
+      "ownerAgentId": "shared-skill-library",
+      "sourceAgentId": "shared-skill-library",
+      "sourcePath": "/Users/gaolifu/work/project/apple/apple-demo/apps/agent-backend/assets/skills/mml-generation/SKILL.md",
+      "lifecycle": "published",
+      "starterEnabled": false,
+      "starterPriority": 0,
+      "agentBindings": [
+        {
+          "agentId": "workspace-agent"
+        }
+      ],
+      "importedAt": 1775837988552,
+      "updatedAt": 1775889662967
+    },
+    {
+      "skillId": "tai-lai",
+      "canonicalName": "tai-lai",
+      "canonicalDescription": "根据用户提供的命令或命令样例，以及TAI/LAI迁移的规划数据表，生成SMF网元的TAI/LAI迁移脚本。触发关键词：TAC迁移、LAC迁移、业务割接、Service Cutover、TAC Migration、LAC Migration、TAI迁移、LAI迁移、TAI Migration、LAI Migration",
+      "displayName": "tai-lai",
+      "displayDescription": "根据用户提供的命令或命令样例，以及TAI/LAI迁移的规划数据表，生成SMF网元的TAI/LAI迁移脚本。触发关键词：TAC迁移、LAC迁移、业务割接、Service Cutover、TAC Migration、LAC Migration、TAI迁移、LAI迁移、TAI Migration、LAI Migration",
+      "starterSummary": "",
+      "ownerAgentId": "shared-skill-library",
+      "sourceAgentId": "shared-skill-library",
+      "sourcePath": "/Users/gaolifu/work/project/apple/apple-demo/apps/agent-backend/assets/skills/tai-lai/SKILL.md",
+      "lifecycle": "draft",
+      "starterEnabled": false,
+      "starterPriority": 0,
+      "agentBindings": [
+        {
+          "agentId": "workspace-agent"
+        }
+      ],
+      "importedAt": 1775741964251,
+      "updatedAt": 1775838322744
+    },
+    {
+      "whenToUse": "当用户需要根据网络规划数据生成 SMF MML 配置脚本、进行服务区绑定或解绑操作时使用此技能。",
+      "skillId": "smf-plan-mml",
+      "canonicalName": "smf-plan-mml",
+      "canonicalDescription": "根据 SMF 网络规划数据自动生成服务区绑定 MML 脚本，包括 UPAREA 创建和 UPAREABIND 绑定/解绑命令。",
+      "displayName": "TAI割接场景",
+      "displayDescription": "根据 SMF 网络规划数据自动生成服务区绑定 MML 脚本，包括 UPAREA 创建和 UPAREABIND 绑定/解绑命令。",
+      "starterSummary": "",
+      "ownerAgentId": "shared-skill-library",
+      "sourceAgentId": "shared-skill-library",
+      "sourcePath": "/Users/gaolifu/work/project/apple/apple-demo/apps/agent-backend/assets/skills/smf-plan-mml/SKILL.md",
+      "lifecycle": "draft",
+      "intentGroup": "configuration-authoring",
+      "starterEnabled": true,
+      "starterPriority": 0,
+      "agentBindings": [
+        {
+          "agentId": "workspace-agent"
+        }
+      ],
+      "importedAt": 1776010304304,
+      "updatedAt": 1776175388347
+    },
+    {
+      "skillId": "upf-area-plan",
+      "canonicalName": "upf-area-plan",
+      "canonicalDescription": "解析 UPF 服务区规划数据并生成 MML 命令",
+      "displayName": "upf-area-plan",
+      "displayDescription": "解析 UPF 服务区规划数据并生成 MML 命令",
+      "starterSummary": "",
+      "ownerAgentId": "shared-skill-library",
+      "sourceAgentId": "shared-skill-library",
+      "sourcePath": "/Users/gaolifu/work/project/apple/apple-demo/apps/agent-backend/assets/skills/upf-area-plan/SKILL.md",
+      "lifecycle": "draft",
+      "starterEnabled": false,
+      "starterPriority": 0,
+      "agentBindings": [
+        {
+          "agentId": "workspace-agent"
+        },
+        {
+          "agentId": "skill-creator"
+        }
+      ],
+      "importedAt": 1776161181982,
+      "updatedAt": 1776175388347
+    }
+  ]
+}

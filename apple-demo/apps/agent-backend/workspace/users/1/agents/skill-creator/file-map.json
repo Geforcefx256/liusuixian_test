@@ -1,0 +1,99 @@
+{
+  "version": 5,
+  "scope": {
+    "userId": 1,
+    "agentId": "skill-creator"
+  },
+  "entries": [
+    {
+      "fileKey": "f_sny5gy",
+      "fileId": "e0591fb0-8b3a-4e8e-8e36-b6554dc3982b",
+      "createdAt": 1776111007658,
+      "originalName": "Planning.csv",
+      "storageExtension": ".csv",
+      "kind": "upload",
+      "relativePath": "Planning.csv"
+    },
+    {
+      "fileKey": "f_vr2eaa",
+      "fileId": "c6249c1d-c030-4da2-9fd6-715bb0c4a4e1",
+      "createdAt": 1776111011640,
+      "originalName": "smf-existing-config.txt",
+      "storageExtension": ".txt",
+      "kind": "upload",
+      "relativePath": "smf-existing-config.txt"
+    },
+    {
+      "fileKey": "f_a2h2cy",
+      "fileId": "dbed85ec-5c53-4b98-b59a-afc5d73cd06b",
+      "createdAt": 1776179205063,
+      "originalName": "skills/upf-area-planner/scripts/generate.ts",
+      "storageExtension": ".ts",
+      "kind": "project",
+      "relativePath": "skills/upf-area-planner/scripts/generate.ts"
+    },
+    {
+      "fileKey": "f_8fu02b",
+      "fileId": "783ecd3e-837a-4d4a-addd-06739b7c6179",
+      "createdAt": 1776179264240,
+      "originalName": "test_planning_data.csv",
+      "storageExtension": ".csv",
+      "kind": "project",
+      "relativePath": "test_planning_data.csv"
+    },
+    {
+      "fileKey": "f_ajprjd",
+      "fileId": "268570ce-1d0a-401a-a221-e7b833ebe58b",
+      "createdAt": 1776179304361,
+      "originalName": "test_upf_script.js",
+      "storageExtension": ".js",
+      "kind": "project",
+      "relativePath": "test_upf_script.js"
+    },
+    {
+      "fileKey": "f_q27o69",
+      "fileId": "1389ca66-4e77-4425-b287-5ad00e130348",
+      "createdAt": 1776179348985,
+      "originalName": "test_generate.js",
+      "storageExtension": ".js",
+      "kind": "project",
+      "relativePath": "test_generate.js"
+    },
+    {
+      "fileKey": "f_t5y1kz",
+      "fileId": "ade55574-9b07-4af0-8b81-f9765ddf62bd",
+      "createdAt": 1776179417755,
+      "originalName": "direct_test.js",
+      "storageExtension": ".js",
+      "kind": "project",
+      "relativePath": "direct_test.js"
+    },
+    {
+      "fileKey": "f_i58bse",
+      "fileId": "2c401f3d-d5f7-482b-ac81-198823b7b0dc",
+      "createdAt": 1776179438749,
+      "originalName": "skills/upf-area-planner/SCRIPTS.yaml",
+      "storageExtension": ".yaml",
+      "kind": "project",
+      "relativePath": "skills/upf-area-planner/SCRIPTS.yaml"
+    },
+    {
+      "fileKey": "f_1lk2hs",
+      "fileId": "14eac52f-495a-4280-8cfb-9d8b8d96078b",
+      "createdAt": 1776179504203,
+      "originalName": "skills/upf-area-planner/SKILL.md",
+      "storageExtension": ".md",
+      "kind": "project",
+      "relativePath": "skills/upf-area-planner/SKILL.md"
+    },
+    {
+      "fileKey": "f_uj4vrv",
+      "fileId": "c9c495cb-ec85-4fdf-b030-b7302460a701",
+      "createdAt": 1776179596752,
+      "originalName": "comprehensive_test.js",
+      "storageExtension": ".js",
+      "kind": "project",
+      "relativePath": "comprehensive_test.js"
+    }
+  ]
+}

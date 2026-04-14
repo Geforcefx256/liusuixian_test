@@ -1,0 +1,13 @@
+{
+  "timeoutMs": 1234,
+  "defaultServer": "local",
+  "servers": [
+    {
+      "id": "local",
+      "enabled": true,
+      "transport": "stdio",
+      "command": "node",
+      "tools": []
+    }
+  ]
+}

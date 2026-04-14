@@ -1,0 +1,38 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+# Example:
+#   context: |
+#     Tech stack: TypeScript, React, Node.js
+#     We use conventional commits
+#     Domain: e-commerce platform
+context: |
+  Tech stack: TypeScript, Vue, Node.js, pnpm workspace monorepo
+  Repository engineering baseline:
+  - The fixed top-level directories are `apps/`, `packages/`, `scripts/`, `docs/`, and `openspec/`.
+  - Do not delete, rename, move, or restructure those existing top-level directories without explicit confirmation first.
+  - Adding new directories is allowed, but it must not break the current top-level structure or responsibility boundaries.
+  Dependency governance:
+  - Before introducing a new third-party dependency, or upgrading an existing third-party dependency to a new version, confirm that the target version is acceptable first.
+  - Do not independently choose or change third-party dependency versions in manifests, overrides, or lockfiles without that confirmation.
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+rules:
+  proposal:
+    - If the proposed change would touch the fixed top-level directory structure, state that explicit confirmation is required before implementation.
+    - If the proposed change would introduce or upgrade a third-party dependency version, state that explicit confirmation is required before implementation.
+  design:
+    - Preserve the current top-level monorepo structure as a hard baseline unless a separately confirmed restructuring decision exists.
+  tasks:
+    - Do not include tasks that delete, rename, move, or restructure the fixed top-level directories unless that change has already been explicitly confirmed.
+    - Do not include dependency version upgrade tasks unless the target version has already been explicitly confirmed.

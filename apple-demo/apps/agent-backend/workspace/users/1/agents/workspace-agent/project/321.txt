@@ -1,0 +1,3 @@
+/* ME TYPE=UNC, Version=20.11.2 */
+ADD SGSLKS:VN="1",LSX="1";
+ADD SGSLKS:LSX=13, VN="2", LSN="34er43r";

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "planning",
+    "title": "方案制作",
+    "subtitle": "选择Skill快速开始生成配置方案",
+    "icon": "规",
+    "discoveryQuery": "方案 制作",
+    "emptyTitle": "搜索方案制作技能",
+    "emptyDescription": "当前没有代表 skill，先搜索方案制作技能或直接描述目标。"
+  },
+  {
+    "id": "configuration-authoring",
+    "title": "配置生成",
+    "subtitle": "选择Skill快速开始生成MML配置",
+    "icon": "配",
+    "discoveryQuery": "配置 生成",
+    "emptyTitle": "搜索配置生成技能",
+    "emptyDescription": "当前没有代表 skill，先搜索适合的配置生成技能。"
+  },
+  {
+    "id": "verification",
+    "title": "配置核查",
+    "subtitle": "选择Skill快速开始核查",
+    "icon": "核",
+    "discoveryQuery": "配置 核查",
+    "emptyTitle": "搜索配置核查技能",
+    "emptyDescription": "当前没有代表 skill，可先搜索配置核查技能。"
+  }
+]

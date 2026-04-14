@@ -1,0 +1,21 @@
+templates:
+  - id: generate
+    description: 解析 UPF 服务区规划数据并生成 MML 命令
+    entry: scripts/generate.ts
+    timeoutSeconds: 30
+    inputSchema:
+      type: object
+      properties:
+        planningData:
+          type: string
+          description: CSV 格式的规划数据，包含列：网络类型,服务区类型,起始服务区,终止服务区,原UPF服务区,新UPF服务区
+        existingAreas:
+          type: array
+          items:
+            type: string
+          description: 现网配置中已存在的 AREANAME 列表（从 mml-cli file-query 获取）
+      required:
+        - planningData
+    argv:
+      - kind: payload
+        encoding: json

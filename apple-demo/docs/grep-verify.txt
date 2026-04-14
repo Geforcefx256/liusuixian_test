@@ -1,0 +1,18 @@
+// grep dedup verification file
+import { readFile } from 'node:fs/promises'
+import { readFile as readFileAlias } from 'node:fs/promises'
+import path from 'node:path'
+
+const HELLO = 'hello world'
+const GREETING = 'hello again'
+const MSG = 'hello from line 8'
+
+function sayHello() {
+  console.log('hello from function')
+}
+
+function anotherHello() {
+  console.log('hello from another function')
+}
+
+export { HELLO, GREETING, MSG, sayHello, anotherHello }

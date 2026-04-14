@@ -1,0 +1,5 @@
+{
+  "reason": "更新 SCRIPTS.yaml，移除 mmlFile 参数",
+  "timestamp": 1776179438748,
+  "summary": "简化输入参数，mmlFile 查询通过 skill:exec 调用 mml-cli 完成"
+}

@@ -1,0 +1,18 @@
+{
+  "version": 5,
+  "scope": {
+    "userId": 1,
+    "agentId": "workspace-agent"
+  },
+  "entries": [
+    {
+      "fileKey": "f_ih1gyh",
+      "fileId": "a5127300-80bb-46f0-a459-85ed0e8479d1",
+      "createdAt": 1776173762668,
+      "originalName": "321.txt",
+      "storageExtension": ".txt",
+      "kind": "project",
+      "relativePath": "321.txt"
+    }
+  ]
+}
