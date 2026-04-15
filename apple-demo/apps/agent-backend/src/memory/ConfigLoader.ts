@@ -265,7 +265,7 @@ const DEFAULT_CONFIG: Config = {
   runtime: {
     workspaceDir: '../..',
     agentLoop: {
-      maxSteps: 20,
+      maxSteps: 50,
       modelRecovery: {
         maxCorrectionCalls: 1
       },
