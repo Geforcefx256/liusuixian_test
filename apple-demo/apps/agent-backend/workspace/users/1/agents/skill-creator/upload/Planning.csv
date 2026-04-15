@@ -1,4 +1,0 @@
-网络类型 , 服务区类型 , 起始服务区 , 终止服务区 , 原 UPF 服务区 , 新 UPF 服务区
-2/3G,LAI,60402040000,60402040000,zonetetan2_lai,zonetec1_lai
-4G,TAI,60402040000,60402040000,zonetetan2_tai,
-5G,TAI,60402040000,60402040000,,zonetec1_tai

@@ -6,24 +6,6 @@
   },
   "entries": [
     {
-      "fileKey": "f_sny5gy",
-      "fileId": "e0591fb0-8b3a-4e8e-8e36-b6554dc3982b",
-      "createdAt": 1776111007658,
-      "originalName": "Planning.csv",
-      "storageExtension": ".csv",
-      "kind": "upload",
-      "relativePath": "Planning.csv"
-    },
-    {
-      "fileKey": "f_vr2eaa",
-      "fileId": "c6249c1d-c030-4da2-9fd6-715bb0c4a4e1",
-      "createdAt": 1776111011640,
-      "originalName": "smf-existing-config.txt",
-      "storageExtension": ".txt",
-      "kind": "upload",
-      "relativePath": "smf-existing-config.txt"
-    },
-    {
       "fileKey": "f_a2h2cy",
       "fileId": "dbed85ec-5c53-4b98-b59a-afc5d73cd06b",
       "createdAt": 1776179205063,
