@@ -1,0 +1,24 @@
+安装时到底发生了什么（按时间序）
+安装前钩子（electron/build/installer.nsh，自动被 electron-builder 引入）：
+customInit（93-97 行）先枚举 HKCU+HKLM 卸载注册表，若发现旧产品 IPMaster-Cowork 就同步执行它的静默卸载——旧产品几百 MB 文件的删除全部算进本次安装时间。
+关进程逻辑（34-46 行）每次调用都拉起 2 个 PowerShell（冷启动各 1–3 秒）且带 Sleep 2000/Sleep 500 硬等待；对新旧两个目录各调一次 = 4 次 PowerShell + 约 5–6 秒纯固定等待，装在什么机器上都有。
+NSIS 解压主体：electron-builder 把所有内容（Electron 本体 + asar + resources/backend 整棵树）打成 app-64.7z 塞进 Setup.exe，安装时由 NSIS 的 7z 插件单线程逐文件解压写盘。而这棵树里装的是：
+PyInstaller onedir 后端（_internal/ 里几百个 dll/pyd + 前端 dist 内嵌）
+完整 PBS Python 运行时（CPython + 整套标准库——数千小文件）
+drawing-engine 连同它的 node_modules（数千小文件）
+browser-mcp 再加一份生产 node_modules（约 7MB 但文件多）
+default_data（58KB，可忽略）
+你们自己的设计文档（docs/自定义增量更新设计.md 31/141/195 行）口径是“几百 MB / 几百个文件”，但把 python 标准库和两份 node_modules 算进去，实际落盘文件数大概率是数千到上万——NTFS 上小文件逐个创建+写 ACL 的有效吞吐只有大文件顺序写的 1/10 到 1/50，这是安装时长的第一大头。
+Windows Defender 放大：每个解压出的 .exe/.dll/.pyd/.node 都要过实时深度扫描，海量小文件场景典型放大 2–5 倍。
+首启（用户体感上“装完还要卡很久”的部分）：
+后端首次启动执行 python -m venv 建共享虚拟环境（bootstrap/frozen.py:125-168）——又写几百个小文件到 AppData（好在不做 pip 联网装依赖，依赖是技能运行时才懒加载）。
+播种逻辑本身很轻（default_data 全部 58KB、agents 21KB），不是瓶颈——这点排除了我上一轮可能的误导。
+electron/updater.js:33-36：autoDownload: true + 禁用差分下载——如果装的不是 feed 上最新版，首次启动后台立刻开始下载完整新版 Setup.exe（几百 MB），和用户首次使用抢 IO/带宽。
+根因排序
+#	根因	证据
+1	载荷由多棵海量小文件树构成（Python 标准库 + 两份 node_modules + onedir），逐文件解压写盘	spec + build_electron.ps1 拷贝清单；electron/package.json extraResources
+2	NSIS 单线程逐文件解压，无并行	electron-builder NSIS 机制
+3	Defender 实时扫描逐文件放大（环境因素）	Windows 通用
+4	installer.nsh 钩子的固定开销：4 次 PowerShell 冷启动 + 硬编码 Sleep；检测到旧版时同步执行全量卸载	installer.nsh:34-46, 93-97
+5	更新场景整包重做：差分下载被禁用 → 全量下载 + 全量解压覆盖	updater.js:35-36（你们文档第 12 行也自认）
+6	首启附带动作：autoDownload 全量拉新包（若非最新）+ 建 venv	updater.js:33, frozen.py:125-168
